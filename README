@@ -1,0 +1,23 @@
+This README file contains details about how to run the traffic_counter_reader program 
+and other information about it.
+
+# How to run unittest
+python3 traffic_counter_test.py
+
+# How to run the program
+python3 traffic_counting.py <path_to_the_input_file>
+for example:
+python3 traffic_counting.py example_input
+
+# Assumption
+1. For output of the program, we print it to stdout
+2. Assume missing record means 0 car passing. Eg, 
+        '2021-12-02T00:00:00 1',
+        '2021-12-02T01:00:00 2',
+   is interpreted as the same of
+        '2021-12-02T00:00:00 1',
+        '2021-12-02T00:30:00 0',
+        '2021-12-02T01:00:00 2',
+    when counting traffic
+3. Assume for output "The 1.5 hour period with least cars", we need to consider
+    empty records. (records that missed in the input, implying 0 traffic)
